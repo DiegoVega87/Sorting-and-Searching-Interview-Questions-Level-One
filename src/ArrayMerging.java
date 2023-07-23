@@ -50,17 +50,6 @@ public class ArrayMerging {
         int aSize = arr1.length;
         int bSize = arr2.length;
 
-        if(aSize == 0 && bSize == 0){
-            return new int[0];
-        }
-
-        if(aSize == 0){
-            return arr2;
-        }
-        if(bSize == 0){
-            return arr1;
-        }
-
         int[] msArray = new int[aSize + bSize];
 
         int i = 0;
