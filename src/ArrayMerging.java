@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayMerging {
 
     /*
@@ -18,4 +20,46 @@ public class ArrayMerging {
     *   mergedArr should be {1, 2, 3, 4, 5, 6, 7, 8}
     *
     * */
+
+
+    public static int[] mergeSortedArrays(int[] arr1, int[] arr2){
+
+        int aSize = arr1.length;
+        int bSize = arr2.length;
+
+        if(aSize == 0 && bSize == 0){
+            return new int[0];
+        }
+
+        if(aSize == 0){
+            return arr2;
+        }
+        if(bSize == 0){
+            return arr1;
+        }
+
+        int[] msArray = new int[aSize + bSize];
+
+        int i = 0;
+        int j = 0;
+        int index =0;
+
+        while (i < aSize && j < bSize){
+
+            if(arr1[i] <= arr2[j]){
+                msArray[index++] = arr1[i++];
+            }else{
+                msArray[index++] = arr2[j++];
+            }
+        }
+
+        while(i < aSize){
+            msArray[index++] = arr1[i++];
+        }
+        while(j < bSize){
+            msArray[index++] = arr2[j++];
+        }
+
+        return msArray;
+    }
 }
