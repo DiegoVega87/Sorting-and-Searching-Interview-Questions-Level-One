@@ -1,3 +1,6 @@
+import java.util.Arrays;
+
+
 public class FindingShipments {
     /*
     * As a startup in the logistics industry, we have a massive matrix containing information about different shipments.
@@ -16,4 +19,30 @@ public class FindingShipments {
     *   Output: False
     *
      * */
+
+
+    public static boolean searchShipment(int[][] matrix, int target){
+
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        int start = 0;
+        int end = (rows * columns)-1;
+
+        while(start <= end){
+
+            int mid = start + (end - start)/2;
+            int midValue = matrix[mid / columns][mid % columns];
+
+            if(midValue == target){
+                return true;
+            }else if(target > midValue){
+                start = mid + 1;
+            }else{
+                end = mid -1;
+            }
+        }
+
+        return false;
+    }
 }
