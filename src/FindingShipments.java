@@ -20,7 +20,30 @@ public class FindingShipments {
     *
      * */
 
+    public static void main(String[] args){
+        int[][]  matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int target = 5;
+        System.out.println(searchShipment(matrix, target));
 
+
+        matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        target = 10;
+        System.out.println(searchShipment(matrix, target));
+
+        matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        target = 1;
+        System.out.println(searchShipment(matrix, target));
+
+        matrix = new int[][]{{1, 2, 3}};
+        target = 2;
+        System.out.println(searchShipment(matrix, target));
+
+        matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        target = 9;
+        System.out.println(searchShipment(matrix, target));
+
+
+    }
     public static boolean searchShipment(int[][] matrix, int target){
 
         int rows = matrix.length;
